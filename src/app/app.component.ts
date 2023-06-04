@@ -15,10 +15,16 @@ export class AppComponent implements OnInit {
   unsubscribe: any;
 
   ngOnInit() {
-    //this.node = document.querySelector('input');
-    console.log('node', this.node);
+    // Select the input element in the UI
+    // This is where we'll produce the observable stream
+    this.node = document.querySelector('input');
+    // Select the paragraph element in the UI
+    // This is where we'll display the observable stream
     this.p = document.querySelector('p');
-    console.log('p', this.p);
+    // Call the statick event on our observable class
+    // This method will return a new observable
+    // This method would normally be in another class,
+    // but we want to keep in simple
     this.input$ = Observable.fromEvent(this.node, 'input');
     // Pass the observer object literal in the subscribe function
     this.unsubscribe = this.input$.subscribe({

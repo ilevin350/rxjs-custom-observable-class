@@ -27,7 +27,7 @@ export class Observable {
       // Add a listener to for input events, passing in the callback
       element.addEventListener(name, callback, false);
       // Return the unsubscribe function
-      return () => element.removeEventListener(name, callback, false);
+      return () => element.removeEventListener(name, callback);
     });
   }
 }
